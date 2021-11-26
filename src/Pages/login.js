@@ -1,13 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Text, View, TouchableOpacity, SafeAreaView, StyleSheet, Image, StatusBar, TextInput, ScrollView } from 'react-native'
 import PhoneInput from 'react-native-phone-number-input';
-import DropDownPicker from 'react-native-dropdown-picker';
-// import Icon from 'react-native-vector-icons';
-import { Input, Icon } from 'react-native-elements';
-// import Icon from 'react-native-ico-font-awesome';
 
 
-const Login = () => {
+const Login = (props) => {
     const [phoneValue, setPhoneValue] = useState(null)
     const [isValidNumber, setIsValidNumber] = useState(false)
     const phoneRef = useRef(undefined);
@@ -19,6 +15,7 @@ const Login = () => {
         { label: 'Apple', value: 'apple' },
         { label: 'Banana', value: 'banana' }
     ]);
+    const { navigate } = props.navigation;
     return (
         <SafeAreaView style={styles.outer}>
             <StatusBar barStyle='light-content' backgroundColor='#FFBF00' hidden={true} />
@@ -49,27 +46,8 @@ const Login = () => {
                         />
 
                     </View>
-                    {/* <Input
-                        placeholder='INPUT WITH CUSTOM ICON'
-                        leftIcon={
-                            <Icon
-                                name='sc-telegram'
-                                type='evilicon'
-                                color='#517fa4'
-                            />
-                        }
-                        containerStyle={styles.textInput}
-                    /> */}
-                    {/* <DropDownPicker
-                        open={open}
-                        value={value}
-                        items={items}
-                        setOpen={setOpen}
-                        setValue={setValue}
-                        setItems={setItems}
-                    /> */}
                     <Text style={styles.Text_OTP}>Enter your mobile number to get veron OTP</Text>
-                    <TouchableOpacity style={styles.submitBtn} onPress={() => alert("hello")}>
+                    <TouchableOpacity style={styles.submitBtn} onPress={() => navigate('Thank')}>
                         <Text style={styles.btnText}>SUBMIT</Text>
                     </TouchableOpacity>
                 </View>
@@ -170,10 +148,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         shadowColor: '#000',
         shadowOffset: { width: 1, height: 1 },
-        shadowOpacity:  0.4,
+        shadowOpacity: 0.4,
         shadowRadius: 3,
         elevation: 5,
-        margin:10
+        margin: 10
     },
     textInput: {
         width: '86%',

@@ -21,7 +21,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const Thank = () => {
+const Thank = (props) => {
+  const { navigate } = props.navigation;
   return (
     <View style={styles.container}>
       <StatusBar hidden={true} />
@@ -37,7 +38,7 @@ const Thank = () => {
         </View>
 
         <View style={styles.buttonview}>
-          <TouchableOpacity style={styles.touchableOpacity}>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={() => navigate('Register')}>
             <Text style={styles.text}>PROCEED</Text>
           </TouchableOpacity>
         </View>

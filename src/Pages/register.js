@@ -13,10 +13,11 @@ import {
 // import { Dropdown } from 'react-native-material-dropdown';
 
 
-const Register = () => {
+const Register = (props) => {
+  const { navigate } = props.navigation;
   return (
     <SafeAreaView style={styles.outer}>
-      <StatusBar barStyle='light-content' backgroundColor='#FFBF00' hidden={false} />     
+      <StatusBar barStyle='light-content' backgroundColor='#FFBF00' hidden={false} />
       <ScrollView style={styles.container}>
         <View style={styles.parentView}>
           <View style={styles.title}>
@@ -56,7 +57,7 @@ const Register = () => {
               <TextInput style={styles.input}></TextInput>
             </View>
           </View>
-          <TouchableHighlight style={styles.submitBtn} onPress={() => alert("hello")}>
+          <TouchableHighlight style={styles.submitBtn} onPress={() => navigate('Verification')}>
             <Text style={styles.btnText}>CONTINUE</Text>
           </TouchableHighlight>
         </View>
