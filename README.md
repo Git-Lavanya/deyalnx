@@ -1,0 +1,1 @@
+Dealyx: A go-to online marketplace for a diverse range of products. Explore a seamless shopping experience with top-quality items across various categories, designed to meet all your needs and preferences.
